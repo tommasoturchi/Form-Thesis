@@ -15,10 +15,10 @@ proof:
 		for i in $(CHAPTERS) $(FBMATTERS); do \
 		echo "=====" $$i "====="; perl bin/dups $$i; done;
 tex:
-		xelatex thesis.tex
-		bibtex thesis
-		xelatex thesis.tex
-		rm -f thesis-blx.bib thesis.aux thesis.bbl thesis.blg thesis.log thesis.out thesis.run.xml thesis.toc
+		xelatex -interaction=nonstopmode thesis.tex || true
+		bibtex thesis || true
+		xelatex -interaction=nonstopmode thesis.tex || true
+		rm -f thesis-blx.bib thesis.aux thesis.bbl thesis.blg thesis.log thesis.out thesis.run.xml thesis.toc || true
 final:
 		bin/delcmdchanges.bash thesis.tex thesis-final.tex
 		xelatex thesis-final.tex
