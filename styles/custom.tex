@@ -1,5 +1,13 @@
-% !TEX root = my-thesis.tex
+% !TEX root = ../thesis.tex
 
+\pretolerance=10000
+\usepackage{censor}
+% **************************************************
+% Suppress Warnings
+% **************************************************
+\usepackage{silence}
+\WarningFilter{pdfcolmk}{Nothing to fix}
+\WarningFilter{scrreprt}{titlesec}
 
 % **************************************************
 % Files' Character Encoding
@@ -7,31 +15,30 @@
 \PassOptionsToPackage{utf8}{inputenc}
 \usepackage{inputenc}
 
-
 % **************************************************
 % Information and Commands for Reuse
 % **************************************************
-\newcommand{\thesisTitle}{Fostering Computational Thinking skills with End-User Development and Tangible User Interfaces}
+\newcommand{\thesisTitle}{Fostering Computational Thinking skills with Tangible User Interfaces}
 \newcommand{\thesisName}{Tommaso Turchi}
 \newcommand{\thesisSubject}{This dissertation is submitted for the degree of Doctor of Philosophy}
-\newcommand{\thesisDate}{\today}
-\newcommand{\thesisVersion}{0.1}
+\newcommand{\thesisDate}{January 18, 2019}
+\newcommand{\thesisVersion}{1.0}
 
-\newcommand{\thesisFirstReviewer}{Dr. Andrew Fish}
+\newcommand{\thesisFirstReviewer}{Dr.~Andrew Fish}
 \newcommand{\thesisFirstReviewerUniversity}{\protect{University of Brighton}}
-\newcommand{\thesisFirstReviewerDepartment}{School of Computing, Engineering and Mathematics}
+\newcommand{\thesisFirstReviewerDepartment}{Centre for Secure, Intelligent and Usable Systems}
 
-\newcommand{\thesisSecondReviewer}{Dr. David Bell}
+\newcommand{\thesisSecondReviewer}{Dr.~Alan Serrano-Rico}
 \newcommand{\thesisSecondReviewerUniversity}{\protect{Brunel University London}}
 \newcommand{\thesisSecondReviewerDepartment}{Department of Computer Science}
 
-\newcommand{\thesisFirstSupervisor}{Alessio Malizia}
-\newcommand{\thesisSecondSupervisor}{Steve Love}
+\newcommand{\thesisFirstSupervisor}{Prof.~Alessio Malizia}
+\newcommand{\thesisSecondSupervisor}{Dr.~David Bell}
 
 \newcommand{\thesisUniversity}{\protect{Brunel University London}}
 \newcommand{\thesisUniversityDepartment}{Department of Computer Science}
 \newcommand{\thesisUniversityInstitute}{College of Engineering, Design and Physical Sciences}
-\newcommand{\thesisUniversityGroup}{Human Centred Design Institute}
+%\newcommand{\thesisUniversityGroup}{Human Centred Design Institute}
 \newcommand{\thesisUniversityCity}{London}
 \newcommand{\thesisUniversityStreetAddress}{Kingston Lane, Uxbridge}
 \newcommand{\thesisUniversityPostalCode}{UB8 3PH}
@@ -42,35 +49,36 @@
 % **************************************************
 %\listfiles
 
-
 % **************************************************
 % Load and Configure Packages
 % **************************************************
 \usepackage[english]{babel} % babel system, adjust the language of the content
 \PassOptionsToPackage{% setup clean thesis style
-    figuresep=colon,%
-    sansserif=false,%
-    hangfigurecaption=false,%
-    hangsection=true,%
-    hangsubsection=true,%
-    colorize=full,%
-    colortheme=bul,%
-    bibsys=biber,%
-    bibstyle=alphabetic,%
-    wrapfooter=false,%
-}{cleanthesis}
+  figuresep=colon,%
+  sansserif=false,%
+  hangfigurecaption=false,%
+  hangsection=true,%
+  hangsubsection=true,%
+  colorize=full,%
+  colortheme=bul,%
+  bibsys=biber,%
+  bibstyle=alphabetic,%
+  bibfile={backmatter/thesis},
+  wrapfooter=false,%
+}{styles/cleanthesis}
 \usepackage{styles/cleanthesis}
 
 \hypersetup{% setup the hyperref-package options
-    pdftitle={\thesisTitle},    %   - title (PDF meta)
-    pdfsubject={\thesisSubject},%   - subject (PDF meta)
-    pdfauthor={\thesisName},    %   - author (PDF meta)
-    plainpages=false,           %   -
-    colorlinks=false,           %   - colorize links?
-    pdfborder={0 0 0},          %   -
-    breaklinks=true,            %   - allow line break inside links
-    bookmarksnumbered=true,     %
-    bookmarksopen=true          %
+  pdftitle={\thesisTitle},    %   - title (PDF meta)
+  pdfsubject={\thesisSubject},%   - subject (PDF meta)
+  pdfauthor={\thesisName},    %   - author (PDF meta)
+  plainpages=false,           %   -
+  colorlinks=false,           %   - colorize links?
+  pdfborder={0 0 0},          %   -
+  breaklinks=true,            %   - allow line break inside links
+  bookmarksnumbered=true,     %
+  bookmarksopen=true          %
+  pagebackref=true            %
 }
 
 \makeatletter
@@ -82,36 +90,59 @@
 \apptocmd{\cleanchapterquote}{\KOMAoptions{parskip=false}\vspace*{\baselineskip}}{}{}
 \makeatother
 
-\setkeys[ct]{cthesis}{bibfile=fbmatter/thesis}
+\usepackage{url}
+\expandafter\def\expandafter\UrlBreaks\expandafter{\UrlBreaks%  save the current one
+  \do\a\do\b\do\c\do\d\do\e\do\f\do\g\do\h\do\i\do\j%
+  \do\k\do\l\do\m\do\n\do\o\do\p\do\q\do\r\do\s\do\t%
+  \do\u\do\v\do\w\do\x\do\y\do\z\do\A\do\B\do\C\do\D%
+  \do\E\do\F\do\G\do\H\do\I\do\J\do\K\do\L\do\M\do\N%
+  \do\O\do\P\do\Q\do\R\do\S\do\T\do\U\do\V\do\W\do\X%
+  \do\Y\do\Z}
+\setcounter{biburllcpenalty}{7000}
+\setcounter{biburlucpenalty}{8000}
 
-\usepackage{acronym}
-\newacro{NUI}{Natural User Interface}
-\newacro{GUI}{Graphical User Interface}
-\newacro{TUI}{Tangible User Interface}
-\newacro{EUD}{End-User Development}
-\newacro{PbD}{Programming by Demonstration}
-\newacro{PbI}{Programming by Instruction}
-\newacro{TAPAS}{TAngible Programmable Augmented Surface}
-\newacro{TUIO}{Tangible User Interface Objects}
-\newacro{IFTTT}{IF This Then That}
-\newacro{VP}{Visual Programming}
+\usepackage{breakcites}
+
+\usepackage[smaller,printonlyused]{acronym}
 \newcommand{\acr}[1]{\acs{#1} (\aclu{#1})}
 \usepackage{etoolbox}
-\preto\section\acresetall
+\preto\chapter\acresetall{}
+
+\setcapindent{0pt}
 
 \usepackage{subcaption}
+\usepackage{booktabs}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{thmtools}
+\declaretheoremstyle[
+spaceabove=6pt, spacebelow=6pt,
+headfont=\normalfont\itshape,
+notefont=\mdseries, notebraces={(}{)},
+bodyfont=\normalfont,
+postheadspace=0.6em,
+headpunct=:
+]{hystyle}
+\declaretheorem[style=hystyle, name=Hypothesis, preheadhook={\renewcommand{\thehyp}{H\textsubscript{\arabic{hyp}}}}]{hyp}
 
-\newcommand{\citetemp}[1]{(#1)}
+\usepackage{cleveref}
+\crefname{hyp}{hypothesis}{hypotheses}
+\Crefname{hyp}{Hypothesis}{Hypotheses}
 
-%\usepackage[usenames, dvipsnames]{color}
+\usepackage{stmaryrd}
+\usepackage{numprint}
+\npstyleenglish{}
 
-\usepackage[bordercolor=gray!20,backgroundcolor=blue!10,linecolor=none,textsize=scriptsize,textwidth=1.2in]{todonotes}
+\usepackage{tikz}
 
-\usepackage[authormarkupposition=left,deletedmarkup=sout,authormarkuptext=name,authormarkup=none]{changes}
-\definecolor{darkspringgreen}{rgb}{0.09, 0.45, 0.27}
-\definechangesauthor[name={Alessio Malizia},color=darkspringgreen]{AM}
-\definecolor{bostonuniversityred}{rgb}{0.8, 0.0, 0.0}
-\definechangesauthor[name={Tommaso Turchi},color=bostonuniversityred]{TT}
-\definecolor{azure}{rgb}{0.0, 0.5, 1.0}
-\setremarkmarkup{\todo[color=Changes@Color#1!20]{#1: #2}}
-\fi
+\usepackage{array}
+\renewcommand{\arraystretch}{1.3}
+\newcolumntype{M}[1]{>{\centering\arraybackslash}m{#1}}
+\newcolumntype{L}[1]{>{\raggedright\arraybackslash}m{#1}}
+
+\usepackage[commentmarkup=margin,final]{./styles/changes}
+
+\makeatletter
+\@namedef{Changes@AuthorColor}{red}
+\colorlet{Changes@Color}{red}
+\def\blx@maxline{77}
+\makeatother

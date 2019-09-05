@@ -3,18 +3,21 @@
 % **************************************************
 \documentclass[%
     paper=A4,               % paper size --> A4 is default in Germany
-    twoside=true,           % onesite or twoside printing
+    twoside=true,          % onesite or twoside printing
     openright,              % doublepage cleaning ends up right side
     parskip=full,           % spacing value / method for paragraphs
     chapterprefix=true,     % prefix for chapter marks
-    11pt,                   % font size
+    12pt,                   % font size
     headings=normal,        % size of headings
     bibliography=totoc,     % include bib in toc
     listof=totoc,           % include listof entries in toc
     titlepage=on,           % own page for each title page
     captions=tableabove,    % display table captions above the float env
-    draft=true,            % value for draft version
+    draft=true,             % value for draft version
 ]{scrreprt}%
+%\RequirePackage[english=usenglishmax]{hyphsubst}
+\usepackage{hyphsubst}
+%\HyphSubstLet{english}{usenglishmax}
 
 
 % **************************************************
@@ -36,42 +39,44 @@
 % --------------------------
 % Front matter
 % --------------------------
-\pagenumbering{roman}			% roman page numbing (invisible for empty page style)
-\pagestyle{empty}				% no header or footers
-\input{fbmatter/titlepages}		% INCLUDE: all titlepages
-\cleardoublepage
+\pagenumbering{roman}                           % roman page numbing (invisible for empty page style)
+\pagestyle{empty}                               % no header or footers
+\input{frontmatter/titlepages}                  % INCLUDE: all titlepages
+\cleardoublepage{}
 
-\pagestyle{plain}				% display just page numbers
-\input{fbmatter/abstract}		% INCLUDE: the abstracts (english and german)
-\cleardoublepage
+\input{frontmatter/dedication}                    % INCLUDE: the abstracts
+\cleardoublepage{}
+
+\pagestyle{plain}                               % display just page numbers
+\input{frontmatter/abstract}                    % INCLUDE: the abstracts
+\cleardoublepage{}
 %
-\input{fbmatter/acknowledgement} % INCLUDE: acknowledgement
-\cleardoublepage
+\input{frontmatter/acknowledgement}             % INCLUDE: acknowledgement
+\cleardoublepage{}
 %
-\setcounter{tocdepth}{2}		% define depth of toc
-\tableofcontents				% display table of contents
-\cleardoublepage
+\setcounter{tocdepth}{2}                        % define depth of toc
+\tableofcontents                                % display table of contents
+\cleardoublepage{}
 
 % --------------------------
 % Body matter
 % --------------------------
-\pagenumbering{arabic}			% arabic page numbering
-\setcounter{page}{1}			% set page counter
-\pagestyle{maincontentstyle} 	% fancy header and footer
+\pagenumbering{arabic}                          % arabic page numbering
+\setcounter{page}{1}                            % set page counter
+\pagestyle{maincontentstyle}                    % fancy header and footer
 
-% \input{chapters/01-introduction}   % INCLUDE: introduction
-\input{chapters/02-related-works}  % INCLUDE: related work
-\input{chapters/03-exploration}    % INCLUDE: exploration
-\input{chapters/04-tapas}          % INCLUDE: tapas
-% \input{chapters/05-tapasplay}      % INCLUDE: tapasplay
-% \input{chapters/06-discussion}     % INCLUDE: discussion
-% \input{chapters/07-conclusion}     % INCLUDE: conclusion
+\input{bodymatter/01-introduction}              % INCLUDE: introduction
+\input{bodymatter/02-background}                % INCLUDE: background
+\input{bodymatter/03-education}                 % INCLUDE: education
+\input{bodymatter/04-tapas}                     % INCLUDE: tapas
+\input{bodymatter/05-tapasplay}                 % INCLUDE: tapasplay
+\input{bodymatter/06-conclusion}                % INCLUDE: conclusion
 
 % --------------------------
 % Back matter
 % --------------------------
-\appendix\cleardoublepage
-%\input{chapters/08-appendix}      % INCLUDE: appendix
+%\appendix\cleardoublepage{}
+%\input{backmatter/appendix-1}                  % INCLUDE: appendix-1
 %
 {%
 \setstretch{1.1}
@@ -79,20 +84,27 @@
 \setlength{\biblabelsep}{0pt}
 \setlength{\bibitemsep}{0.5\baselineskip plus 0.5\baselineskip}
 \printbibliography[nottype=online]
-\printbibliography[heading=subbibliography,title={Webpages},type=online,prefixnumbers={@}]
+\newrefcontext[labelprefix={@}]
+\printbibliography[heading=subbibliography,title={Webpages},type=online]
 }
-\cleardoublepage
+\cleardoublepage{}
 
-%\listoffigures
-\cleardoublepage
+\input{backmatter/acronyms}
+\cleardoublepage{}
 
-%\listoftables
-\cleardoublepage
+\listoffigures
+\cleardoublepage{}
 
-\input{fbmatter/colophon}
-\cleardoublepage
+\listoftables
+\cleardoublepage{}
 
-\input{fbmatter/declaration}
+%\input{backmatter/changes}
+%\cleardoublepage{}
+
+\input{backmatter/colophon}
+\cleardoublepage{}
+
+\input{backmatter/declaration}
 \clearpage
 \newpage
 \mbox{}

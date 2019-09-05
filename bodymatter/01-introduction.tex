@@ -1,0 +1,84 @@
+% !TEX root = ../thesis.tex
+%
+\chapter{Introduction}\label{chap:intro}
+
+\cleanchapterquote{You can't think seriously about thinking without thinking about thinking about something.}{Seymour Papert}{Mindstorms, 1980}
+
+This chapter introduces the research carried out in this thesis by outlining the context in relation to \ac{CT}, the addressed Research Questions, and the adopted methodology.
+
+\section{Research Context}
+Today's society is deeply permeated by technology and it is unmistakably clear how much it affects people's lives. From the vastly complicated range of software involved in managing a flight, to the process of booking that same flight online.
+
+\ac{CS} drives jobs growth and innovation throughout economy and society, and computing jobs make up half of all projected new occupations in \ac{STEM} fields between 2016 and 2026 according to a recent study by the Bureau of Labor Statistics~\cite{BLSEP2016}. Right now there are more than \numprint{500000} open computing jobs in the United States alone, and \ac{CS} is the second highest paid college degree~\cite{NACE2018}. In spite of that, only 8\% of \ac{STEM} graduates study \ac{CS}~\cite{IPEDS2016}, and only 40\% of schools in the U.S. teach it to K-12 students (i.e.\ from kindergarten to 12th grade)~\cite{Gallup2016}.
+
+Another research study~\cite{morgan2007ap} showed that women who study \ac{CS} in high school are 6 times more likely to major in \ac{CS} than those who do not, while Black and Hispanic students are 7 or 8 times more likely to do so. This highlights how the diversity problem in tech starts in schools and the primal role of education in supporting the learning across different disciplines and fostering the participation of more and more people to the technological revolution.
+
+To this end, being able to properly support learners in understanding and trusting algorithmic solutions found in computational systems --- and thus participating in the design and development of such solutions --- can bring several benefits in everyday life, making them able to succeed in today's complex and technological society~\cite{Bundy:2007}.
+
+Such support can be achieved by creating the socio-technical conditions for empowering users, as problem owners, to participate in the evolution of such systems~\cite{Fischer:2006kg}. In particular, \ac{EUD} methods~\cite{Lieberman:2006} seek to enable end-users (i.e.\ any computer user) to enjoy some of the computational power that only professional programmers can exploit, and thus can contribute to fostering the technical conditions for such participation. These methods are useful not only in traditional information systems~\cite{Dorner:tr} or spreadsheet-based applications~\cite{Burnett:2009ke}, but also for tailoring personal devices~\cite{Danado:2012vi,Francese:kb} or smart environments~\cite{Cabitza:2016bz,Coutaz:2016bb}.
+
+\subsection{Computational Thinking}
+People will always strive to play a more active role in their life, thus programming is becoming an essential skill to master for the general public, resulting in an overall heightened interest in coding. Take for instance the Hour of Code~\cite{HOC}, a successful global initiative organised by Code.org (a non-profit organisation founded in 2013 and supported, among others, by Mark Zuckerberg and Bill Gates) involving millions of students of different ages starting with 4-year old, aiming at introducing coding skills to a broader and mixed audience.
+
+Programming is no longer just a job skill, but turned into a \emph{literacy}, enabling people to acquire a new way of thinking and looking at the world, fostering the so-called \acf{CT} skills, i.e.\ all those thinking abilities reflecting fundamental principles and concepts of \ac{CS} like problem-solving, abstraction, and pattern recognition to name but a few. These skills empower people to break complex problems down into small chunks and express them to a computer~\cite{Vee:2013wc}. \ac{CT} shares many of its concepts, practices, and perspectives with other subject areas taught in schools, such as science, mathematics, arts, and engineering, making a strong case for its promotion in disciplines outside of \ac{CS} and right from kindergarten~\cite{Namukasa:2015wj} as a new form of literacy~\cite{Vee:2013wc}.
+
+Stephen Wolfram --- the founder of Wolfram Research and creator of Mathematica and the Wolfram Alpha answer engine  --- wrote a blog post~\cite{SWCT2016} that went viral arguing how \ac{CT} is going to be a defining skill for our future and how important is to teach it to kids today. He notices that the future of any profession will be full of \ac{CT}: medicine, law, education, farming, \ldots, whether it's sensor-based medicine, computational contracts, education analytics or computational agriculture, the future of any field ``X'' is going to rely on being able to integrate and exploit \ac{CT} properly. There either is now a ``computational X'' or there soon will be.
+
+Indeed, \ac{CT} is also influencing research in nearly all disciplines and enabling researchers to ask new kinds of questions and to accept new kinds of answers~\cite{Bundy:2007}; it can, ultimately, change the way we think about the reality we live in, and its integration in the educational system is of pivotal importance for the future of the generations to come.
+
+\section{Research Questions}
+Due to the just discussed global interest in promoting \ac{CT} skills to many broad and diverse audiences, several tools and methods have been designed with the aim of supporting the introduction of programming concepts in more effective and less daunting ways than in the past.
+
+Currently, K-12 teachers around the world running introductory \ac{CT} sessions are supported by a wide variety of multi-purpose technological tools mostly designed to target their usual scenarios and needs. The majority of them are digital tools using a \ac{VPL} (e.g., Scratch~\cite{Resnick:2009bd}) that allows users to program simple tasks by manipulating graphical elements on the screen. Many studies have been carried out investigating these tools in terms of their effects on programming ability or attitude, though not much discussion has arisen about their effects on developing \ac{CT} in real-world educational scenarios, for instance when learners are working collaboratively in groups.
+
+A popular theory of learning that can come to the aid on finding better ways to support \ac{CT} skills development is Piaget's constructivism~\cite{Piaget:1969vq}, which argues that people produce knowledge and form new meanings based upon their experiences and social interactions: exploiting it to teach those concepts underpinning \ac{CT} might represent an effective and engaging way of supporting the learning of such skills.
+
+\acp{TUI}~\cite{Ishii:1997gy} are an interaction paradigm that was devised to foster collaborative learning and exploit humans' natural dexterity for physical objects manipulation to provide an easy to use interface that can be used even by inexperienced people. \acp{TUI} exploit the physical world to offer a concrete representation of the abstract concepts learners usually struggle with, and thus could be used to foster \ac{CT} skills~\cite{McNerney:2004jc,Horn:2009be}.
+
+Supporting users in cultivating their \ac{CT} skills and --- more generally --- going through their routine learning experiences is particularly relevant in \ac{IL} scenarios, namely environments where learning is predominantly unstructured, experiential, and noninstitutional, i.e.\ outside of the classroom (e.g., in museums or workplaces). Modern education strives to make learning intrinsically driven, that is by making learners responsible for their own academic explorations, thus fostering appropriation of their own learning; this way their experience becomes more self-directed and personalised, increasing both their motivation and its efficacy. Developing both technological tools and methods to promote \ac{CT} skills in \ac{IL} domains puts learners in charge and integrates learning in their daily routines to exploit their motivations and provide a more effective experience. Physical objects manipulation might help to lower the barriers of \ac{CT} and support users in dealing with such abstract concepts during \ac{IL} activities.
+
+Moreover, enhancing support for cultivating users' \ac{CT} skills --- and more generally their usual learning experiences --- can be optimal when tools and activities are able to keep them in the so-called ``Flow state'': according to Csikszentmihalyi's theory~\cite{nakamura2014concept}, it refers to a state of intense concentration, sustained interest, and enjoyment of the activity's challenge, i.e.\ when skill and challenge levels of a task are at their highest, allowing users to learn at intense focus. It is hard to obtain such balance, since too much challenge causes anxiety, whereas too little challenge leads to boredom; one of the most common and explored ways of keeping learners in such state is through gameplay, that is by providing them with an engaging challenge and real-time feedback in response to their choices.
+
+Coupling such activities that keep learners in the Flow state with physical interaction might enhance even further learning of \ac{CT} skills by leveraging on a sustained engagement level, afforded social interactions, and a concrete representation of the abstract concepts underpinning it.
+
+To recap, from this context discerns the main Research Question addressed by this thesis: \textit{``Can the collaborative and cognitive naturalness of physical objects manipulation at the basis of \aclp{TUI} aid the understanding of core algorithmic principles and \replaced[comment={D1}]{thus improve}{thus improving} end-users' \acl{CT} skills?''}.
+
+Key Research Questions were formulated in order to support and investigate the main Research Question in detail:
+\begin{itemize}
+    \item Do existing \ac{VPL}-based tools support the collaborative learning of \ac{CT} skills?
+    \item Can physical objects manipulation help foster \acl{CT} skills in \acl{IL} domains?
+    \item Can physical objects manipulation provide a playful and engaging way of learning \ac{CT} skills through gameplay?
+\end{itemize}
+
+\section{Research Aims and Objectives}
+The research described in this thesis aims at \textit{investigating the effects of \acp{TUI} on the development of \ac{CT} skills}. In order to investigate this issue and address the aforementioned Research Questions, the following objectives were formulated:
+\begin{itemize}
+    \item Identifying features of existing \ac{VPL}-based tools that are suitable to cultivate \ac{CT} skills in real-world educational scenarios.
+    \item Designing and developing new tools and methods to support \ac{CT} skills in different \ac{IL} domains exploiting physical manipulation.
+    \item Evaluate such tools to investigate which of their features support \ac{CT} skills.
+    \item Designing a suitable gameplay that can be integrated into different educational domains to support learners in developing \ac{CT} skills.
+\end{itemize}
+
+\section{Research Methodology}
+The research carried out in this thesis followed a three-stage process --- exploration, development, and validation. Each phase corresponded to a major study carried out and reported in a related chapter.
+
+The exploration phase's main goal was to investigate the current tools used in introductory programming sessions and explore their ability to support \ac{CT} skills in real-world educational settings. The study quantitatively analysed real artefacts produced by participants to find effects of such tools on the development of \ac{CT} skills in students working collaboratively and individually with the aim of identifying possible limitations of existing tools.
+
+The development phase focused on a specific educational setting, namely \ac{IL} scenarios, where people learn in a more self-directed way as they go about their daily activities, driven by their preferences and intentions. Two qualitative studies were carried out to design and validate a \ac{TUI}-based system with the aim of supporting the learning of \ac{CT} skills in multiple \ac{IL} domains.
+
+Finally, the validation phase validated the developed tool in an educational environment with young girls, with the aim of devising a suitable and engaging gameplay to foster \ac{CT} skills in a wide range of scenarios. The qualitative study analysed multiple group sessions to identify features that exploit collaboration and increase engagement to benefit \ac{CT}.
+
+\section{Thesis Structure}
+This thesis consists of six chapters, outlined in the following; in addition to the main literature survey in Chapter~\ref{chap:background}, a specific review related to each Key Research Question is reported in the chapter addressing it.
+
+\textit{Chapter 1} introduces \ac{CT}, motivates the research, and outlines its objectives, methodology, and overall structure.
+
+\textit{Chapter 2} surveys the relevant literature related to \acl{CT} and \aclp{TUI}.
+
+\textit{Chapter 3} presents an overview of current tools used to foster \ac{CT} in educational contexts and evaluates their efficacy with respect to collaborative learning.
+
+\textit{Chapter 4} carries on with the main thesis investigation over the effects of \aclp{TUI} on the development of \ac{CT} skills and focuses on \acl{IL} environments, where learning is mostly self-directed and takes place as people go about their daily activities, driven by their preferences and intentions.
+
+\textit{Chapter 5} deals with combining gameplay with \acp{TUI} to support the development of \ac{CT} skills in yet another \ac{IL} domain.
+
+\textit{Chapter 6} concludes this thesis by summarising the key research questions investigated, its contributions and implications, and presents future research directions.
